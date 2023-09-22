@@ -4,3 +4,6 @@ I also learned how to pull and update the file I am working on from github.
 
 
 SSH comand line:    ssh -i ~/Documents/'CS 260'/keypair/cs260key.pem ubuntu@54.89.0.41
+
+
+cheaddarbob.com is the domain that I bought. cheddarbob.com was already purchased
