@@ -8,10 +8,10 @@ But that's not all! "Cheddar Bob" also empowers you to become a part of our vibr
 
 ### Key Features
 - Secure login over HTTPS
-- Ability to select the question to decide
-- Display of choices
-- Ability to select, and change, top three choices
-- Totals from all users displayed in realtime
-- Ability for a user to lock in their top three
-- Results are persistently stored
-- Ability for admin to create and delete questions
+- Ability to select the movie to read a review
+- Display of movies
+- Ability to select, write, and publish a review
+- Reviews from all users displayed in realtime
+- Reviews are persistently stored
+- Ability to see who online currently
+- Users also get suggested a random movie to watch on the about page
