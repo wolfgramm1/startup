@@ -1,4 +1,4 @@
-# startup
+# Startup
 ### Elevator Pitch
 Introducing Cheddar Bob, your one-stop destination for all things movies! Are you a film enthusiast or a casual moviegoer looking for the perfect film to watch tonight? Look no further. Cheddar Bob is your go-to platform for discovering, sharing, and discussing your favorite films.
 
