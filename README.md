@@ -18,15 +18,15 @@ But that's not all! "Cheddar Bob" also empowers you to become a part of our vibr
 ### Technologies
 I am going to use the required technologies in the following ways.
 
-- HTML - Uses correct HTML structure for application. Two HTML pages. One for login and one for voting. Hyperlinks to choice artifact.
+- HTML - Three HTML pages. One for login, one for viewing and reviewing movies and on for an about page that also recomneds a movie to you.
 - CSS - Application styling that looks good on different screen sizes, uses good whitespace, color choice and contrast.
-- JavaScript - Provides login, choice display, applying votes, display other users votes, backend endpoint calls.
+- JavaScript - Provides login, choice display, backend endpoint calls.
 - Service - Backend service with endpoints for:
   * login
-  * retrieving choices
-  * submitting votes
-  * retrieving vote status
-- DB - Store users, choices, and votes in database.
-- Login - Register and login users. Credentials securely stored in database. Can't vote unless authenticated.
-- WebSocket - As each user votes, their votes are broadcast to all other users.
+  * retrieving movies
+  * submitting reviews
+  * retrieving movies to watch
+- DB - Store users, movies, and reviews in database.
+- Login - Register and login users. Credentials securely stored in database.
+- WebSocket - As each user gets on their presence is broadcast to all other users.
 - React - Application ported to use the React web framework.
