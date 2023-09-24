@@ -32,7 +32,7 @@ I am going to use the required technologies in the following ways.
   * login
   * retrieving movies
   * submitting reviews
-  * retrieving movies to watch
+  * retrieving random movie recomendations to watch
 - DB - Store users, movies, and reviews in database.
 - Login - Register and login users. Credentials securely stored in database.
 - WebSocket - As each user gets on their presence is broadcast to all other users.
