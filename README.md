@@ -6,7 +6,12 @@ With "Cheddar Bob", you can effortlessly browse through a library of movie revie
 
 But that's not all! "Cheddar Bob" also empowers you to become a part of our vibrant community of film buffs. Share your thoughts, opinions, and critiques by writing your own movie reviews. Express your passion for cinema, engage in spirited discussions, and connect with fellow movie lovers from around the globe.
 ### Design
+Login Page
 ![Screenshot](IMG_2127.jpg)
+Home Page
+![Screenshot](IMG_2128.jpg)
+About Page
+![Screenshot](IMG_2129.jpg)
 
 ### Key Features
 - Secure login over HTTPS
