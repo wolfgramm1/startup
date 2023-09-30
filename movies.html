@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies</title>
+    
+
+
+    <style>
+      #leftbox {
+          float:left;
+          background:rgb(255, 255, 255);
+          width:33.3%;
+          height:280px;
+      }
+      #middlebox{
+          float:left;
+          background:rgb(255, 255, 255);
+          width:33.3%;
+          height:280px;
+      }
+      #rightbox{
+          float:left;
+          background:rgb(255, 255, 255);
+          width:33.3%;
+          height:280px;
+      }
+      h1{
+          color:rgb(0, 0, 0);
+          text-align:center;
+      }
+  </style>
+  
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+      <h1>Movies</h1>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+      <div class="users">
+        User:
+        <span class="user-name">Mystery User</span>
+      </div>
+      <ul class="notification">
+        <li class="user-name">Tim is online</li>
+        <li class="user-name">Ada is online</li>
+        <li class="user-name">Tim posted a review for "Barbie"</li>
+      </ul>
+
+      <!-- More formatting with old style HTML -->
+      <br />
+      <hr />
+
+      <movies>
+        <div id = "boxes">
+          <h1>List Of Movies</h1>
+           
+          <div id = "leftbox">
+              <h2>Barbie:</h2>
+              <p>"Barbie" is a colorful, empowering delight for
+                 fans of all ages. Vibrant animation, catchy tunes,
+                  and positive messages make it a feel-good family 
+                  watch.</p>
+              <input type="text" id="review" placeholder="Your review here" />
+          </div>
+           
+          <div id = "middlebox">
+              <h2>The Dark Knight:</h2>
+              <p>"The Dark Knight" is a cinematic masterpiece. 
+              Heath Ledger's Joker is iconic, and the film's 
+              intense storytelling and action sequences redefine 
+              superhero movies. A dark, thrilling classic.</p>
+              <input type="text" id="review" placeholder="Your review here" />
+          </div>
+           
+          <div id = "rightbox">
+              <h2>Monty Python and the Holy Grail:</h2>
+              <p>"Monty Python and the Holy Grail" is a comedic gem.
+              Its absurdity, clever satire, and unforgettable humor
+              make it a timeless classic in the world of comedy films.
+              Hilariously brilliant.</p>
+              <input type="text" id="review" placeholder="Your review here" />
+          </div>
+      </div>
+      </movies>
+
+      <br />
+
+    </main>
+
+    <footer>
+      <hr />
+      <span class="text-reset">Walker Wolfgramm</span>
+      <br />
+      <a href="https://github.com/wolfgramm1">GitHub</a>
+    </footer>
+  </body>
+</html>
