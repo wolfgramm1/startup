@@ -37,3 +37,13 @@ I am going to use the required technologies in the following ways.
 - Login - Register and login users. Credentials securely stored in database.
 - WebSocket - As each user gets on their presence is broadcast to all other users.
 - React - Application ported to use the React web framework.
+
+### HTML deliverable
+For this deliverable I built out the structure of my application using HTML.
+
+- HTML pages - Three HTML page that represent the ability to login and review movies. At somepoint a database will be connected to the index page to store and retrive user login info
+- Links - The login page automatically links to the movie review page. The movie page contains movies that can be reviewed. the reviews will be stored on the database as well.
+- Images - Each of the movie choices is represented by a picture of the poster as well as the title.
+- Login - Input box and submit button for login. Will be stored in a database
+- Database - The movie choices represent data pulled from the database. As well as the reviews being stored there with the movies.
+- WebSocket - The users currently active will be shown in realtime. There will also be an API used to suggest random movies in the about page. 
