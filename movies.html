@@ -6,46 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies</title>
 
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="movies.css" />
+
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
     crossorigin="anonymous"
-    />
-    
+  />
 
-
-    <style>
-      #leftbox {
-          float:left;
-          background:rgb(255, 255, 255);
-          width:33.3%;
-          height:flex;
-      }
-      #middlebox{
-          float:left;
-          background:rgb(255, 255, 255);
-          width:33.3%;
-          height:flex;
-      }
-      #rightbox{
-          float:left;
-          background:rgb(255, 255, 255);
-          width:33.3%;
-          height:flex;
-      }
-      header {
-        flex: 0 80px;
-        text-align:left;
-      }
-      h1{
-          color:rgb(0, 0, 0);
-          text-align:left;
-      }
-  </style>
-  
   </head>
-  <body>
+  <body class="container-fluid bg-dark">
     <!-- Use header, main, and footer elements to give semantic structure -->
     <header>
       <h1>Movies</h1>
@@ -72,69 +44,67 @@
       </nav>
 
       <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
     </header>
 
-    <main>
+    <main class="bg-secondary">
+     
       <div class="users">
         User:
         <span class="user-name">Mystery User</span>
-      </div>
-      <ul class="notification">
-        <li class="user-name">Tim is online</li>
-        <li class="user-name">Maddie is online</li>
-        <li class="user-name">Jaren is online</li>
-        <li class="user-name">Maddie posted a review for "Barbie"</li>
-      </ul>
-
-      <!-- More formatting with old style HTML -->
-      <br />
-      <hr />
+        <div id="user-messages">
+          <div class="event"><span class="user-event">Tim</span> is online</div>
+          <div class="event"><span class="user-event">Linus</span> is online</div>
+          <div class="event"><span class="user-event">Jaren</span> is online</div>
+          <div class="event"><span class="user-event">Jaren</span> <span class="system-event">Posted</span>  a review for "Batman"</div>
+        </div>
+      </div> 
 
       <movies>
-        <div id = "boxes">
-          <h1>List Of Movies</h1>
-           
-          <div id = "leftbox">
-              <h2>Barbie:</h2>
-              <img alt="barbieposter" src= "https://www.themoviedb.org/t/p/original/u5kboZR4OMi4QdbOhawCZuzMVWJ.jpg" width = 200px />
-              <p>"Barbie" is a colorful, empowering delight for
-                 fans of all ages. Vibrant animation, catchy tunes,
-                  and positive messages make it a feel-good family 
-                  watch.</p>
-              <input type="text" id="review" placeholder="Your review here" />
-          </div>
-           
-          <div id = "middlebox">
-              <h2>The Dark Knight:</h2>
-              <img alt="batmanposter" src= "https://m.media-amazon.com/images/I/51rF2-tvXVL._AC_UF894,1000_QL80_.jpg" width = 200px />
-              <p>"The Dark Knight" is a cinematic masterpiece. 
-              Heath Ledger's Joker is iconic, and the film's 
-              intense storytelling and action sequences redefine 
-              superhero movies. A dark, thrilling classic.</p>
-              <input type="text" id="review" placeholder="Your review here" />
-          </div>
-           
-          <div id = "rightbox">
-              <h2>Monty Python and the Holy Grail:</h2>
-              <img alt="holygrailposter" src= "https://flxt.tmsimg.com/assets/p629_p_v8_af.jpg" width = 200px />
-              <p>"Monty Python and the Holy Grail" is a comedic gem.
-              Its absurdity, clever satire, and unforgettable humor
-              make it a timeless classic in the world of comedy films.
-              Hilariously brilliant.</p>
-              <input type="text" id="review" placeholder="Your review here" />
-          </div>
-      </div>
-      </movies>
+        <!-- possibly use span, for an inline box -->
 
-      <br />
+        <h1>List Of Movies</h1>
+        <div class="card-group">
+          <div class="card">
+            <img class="card-img-top" src= "https://www.themoviedb.org/t/p/original/u5kboZR4OMi4QdbOhawCZuzMVWJ.jpg" alt="barbieposter" height = 600px>
+            <div class="card-body">
+              <h3 class="card-title">Barbie:</h3>
+              <p class="card-text">"Barbie" is a colorful, empowering delight for
+                fans of all ages. Vibrant animation, catchy tunes,
+                 and positive messages make it a feel-good family 
+                 watch.
+              </p>
+              <input type="text" id="review" placeholder="Your review here" />
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src= "https://m.media-amazon.com/images/I/51rF2-tvXVL._AC_UF894,1000_QL80_.jpg" alt="batmanposter" height = 600px>
+            <div class="card-body">
+              <h3 class="card-title">The Dark Knight:</h3>
+              <p class="card-text">"The Dark Knight" is a cinematic masterpiece. 
+                Heath Ledger's Joker is iconic, and the film's 
+                intense storytelling and action sequences redefine 
+                superhero movies. A dark, thrilling classic.</p>
+                <input type="text" id="review" placeholder="Your review here" />
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" alt="holygrailposter" src= "https://flxt.tmsimg.com/assets/p629_p_v8_af.jpg" height = 600px>
+            <div class="card-body">
+              <h3 class="card-title">Monty Python and the Holy Grail:</h3>
+              <p class="card-text">"Monty Python and the Holy Grail" is a comedic gem.
+                Its absurdity, clever satire, and unforgettable humor
+                make it a timeless classic in the world of comedy films.
+                Hilariously brilliant.</p>
+              <input type="text" id="review" placeholder="Your review here" />
+            </div>
+          </div>
+        </div>
+      </movies>
 
     </main>
 
     <footer>
-      <hr />
       <span class="text-reset">Walker Wolfgramm</span>
-      <br />
       <a href="https://github.com/wolfgramm1">GitHub</a>
     </footer>
   </body>
