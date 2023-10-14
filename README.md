@@ -51,10 +51,10 @@ For this deliverable I built out the structure of my application using HTML.
 ### CSS Deliverable
 
 For this deliverable I properly styled the application into its final appearance.
-
 - Header, footer, and main content body
 - Navigation elements - I used bootstraps navigation element to make a clean looking navbar, I also removed the collapsable button that they implement so it always stays open
 - Responsive to window resizing - My app looks great on all window sizes and devices. I tried it on my laptop, monitor and iphone.
 - Application elements - I feel like I use consistent whitespace and spacing as well as the same coloring for all pages.
 - Application text content - Consistent fonts
 - Application images - I did image styling for all of the posters included on the website. i used class="card-group"> to style them and have them size the way I want them for consistency 
+
