@@ -9,4 +9,4 @@ SSH comand line:    ssh -i ~/Documents/'CS 260'/keypair/cs260key.pem ubuntu@54.8
 cheaddarbob.com is the domain that I bought. cheddarbob.com was already purchased
 
 
-###Midterm Review
+Midterm Review
