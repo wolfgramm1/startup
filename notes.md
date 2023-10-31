@@ -37,13 +37,13 @@ What does the following code using arrow syntax function declaration do?
 
 What does the following code using map with an array output?
 
--example: const array1 = [1, 4, 9, 16];
-
-// Pass a function to map
-const map1 = array1.map((x) => x * 2);
-
-console.log(map1);
-// Expected output: Array [2, 8, 18, 32]
+                        -example: const array1 = [1, 4, 9, 16];
+                        
+                        // Pass a function to map
+                        const map1 = array1.map((x) => x * 2);
+                        
+                        console.log(map1);
+                        // Expected output: Array [2, 8, 18, 32]
 
 What does the following code output using getElementByID and addEventListener?
 
