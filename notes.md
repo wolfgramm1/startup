@@ -86,24 +86,24 @@ How would you use JavaScript to select an element with the id of “byu” and c
 
 What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
 
--<p> </p>, <ul><li></ul>, <ol></ol>
+            -<p> </p>, <ul><li></ul>, <ol></ol>
 
 How do you declare the document type to be html?
 
--.html, <!DOCTYPE html>
+          -.html, <!DOCTYPE html>
 
 What is valid javascript syntax for if, else, for, while, switch statements?
 
-for (statement 1; statement 2; statement 3) , while (condition) {, switch(expression) {
-  case n:
-    code block
-    break;
-  case n:
-    code block
-    break;
-  default:
-    default code block
-}
+                              for (statement 1; statement 2; statement 3) , while (condition) {, switch(expression) {
+                                case n:
+                                  code block
+                                  break;
+                                case n:
+                                  code block
+                                  break;
+                                default:
+                                  default code block
+                              }
 
 What is the correct syntax for creating a javascript object?
 
