@@ -9,21 +9,18 @@
       this.reviews = localStorage.getItem("reviews");
       this.review = localStorage.getItem("review");
 
-    //   forloop of all movies
+    
     setInterval(() => {
         const chatText = document.querySelector('#movie-review-barbie');
-        chatText.innerHTML =
-          `<div class="card-text"><span class="card-text">Barbie movie review</span>` + chatText.innerHTML;
+        chatText.innerHTML = localStorage.getItem("movie-review-barbie");
       }, 5000);
       setInterval(() => {
         const chatText = document.querySelector('#movie-review-batman');
-        chatText.innerHTML =
-          `<div class="card-text"><span class="card-text">Batamn movie review</span>` + chatText.innerHTML;
+        chatText.innerHTML = localStorage.getItem("movie-review-batman");
       }, 5000);
       setInterval(() => {
         const chatText = document.querySelector('#movie-review-holy');
-        chatText.innerHTML =
-          `<div class="card-text"><span class="card-text">Holy movie review</span>` + chatText.innerHTML;
+        chatText.innerHTML = localStorage.getItem("movie-review-holy");
       }, 5000);
 
 
@@ -31,129 +28,68 @@
       playerNameEl.textContent = this.getPlayerName();
     }
   
-    async writeReview(button) {
-      if (this.allowPlayer) {
-        this.allowPlayer = false;
-        await this.buttons.get(button.id).press(1.0);
-  
-        if (this.sequence[this.playerPlaybackPos].el.id === button.id) {
-          this.playerPlaybackPos++;
-          if (this.playerPlaybackPos === this.sequence.length) {
-            this.playerPlaybackPos = 0;
-            this.addButton();
-            this.updateScore(this.sequence.length - 1);
-            await this.playSequence();
-          }
-          this.allowPlayer = true;
-        } else {
-          this.saveScore(this.sequence.length - 1);
-          this.mistakeSound.play();
-          await this.buttonDance(2);
-        }
-      }
-    }
-  
-    async reset() {
-      this.allowPlayer = false;
-      this.playerPlaybackPos = 0;
-      this.sequence = [];
-      this.updateScore('--');
-      await this.buttonDance(1);
-      this.addButton();
-      await this.playSequence();
-      this.allowPlayer = true;
-    }
-  
+
     getPlayerName() {
       return localStorage.getItem('userName') ?? 'Mystery player';
     }
   
-    async playSequence() {
-      await delay(500);
-      for (const btn of this.sequence) {
-        await btn.press(1.0);
-        await delay(100);
-      }
-    }
-  
-    addButton() {
-      const btn = this.getRandomButton();
-      this.sequence.push(btn);
-    }
-  
-    updateScore(score) {
-      const scoreEl = document.querySelector('#score');
-      scoreEl.textContent = score;
-    }
-  
-    async buttonDance(laps = 1) {
-      for (let step = 0; step < laps; step++) {
-        for (const btn of this.buttons.values()) {
-          await btn.press(0.0);
-        }
-      }
-    }
-  
-    getRandomButton() {
-      let buttons = Array.from(this.buttons.values());
-      return buttons[Math.floor(Math.random() * this.buttons.size)];
-    }
-  
-    saveScore(score) {
-      const userName = this.getPlayerName();
-      let scores = [];
-      const scoresText = localStorage.getItem('scores');
-      if (scoresText) {
-        scores = JSON.parse(scoresText);
-      }
-      scores = this.updateScores(userName, score, scores);
-  
-      localStorage.setItem('scores', JSON.stringify(scores));
-    }
-  
-    updateScores(userName, score, scores) {
-      const date = new Date().toLocaleDateString();
-      const newScore = { name: userName, score: score, date: date };
-  
-      let found = false;
-      for (const [i, prevScore] of scores.entries()) {
-        if (score > prevScore.score) {
-          scores.splice(i, 0, newScore);
-          found = true;
-          break;
-        }
-      }
-  
-      if (!found) {
-        scores.push(newScore);
-      }
-  
-      if (scores.length > 10) {
-        scores.length = 10;
-      }
-  
-      return scores;
-    }
   }
   
   const game = new Movies();
   
-  function delay(milliseconds) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(true);
-      }, milliseconds);
-    });
+  function submitReviewHoly() {
+    // Get the input value
+    var userName = localStorage.getItem('userName');
+    var reviewInput = document.getElementById('review-holy').value;
+    localStorage.setItem("movie-review-holy", document.getElementById('movie-review-holy').innerHTML + `<div>${userName}: ${reviewInput} </div>`);
+
+    // Update the text inside the specified div
+    document.getElementById('movie-review-holy').innerHTML += `<div>${userName}: ${reviewInput} </div>`;
   }
-  
-  function loadSound(filename) {
-    return new Audio('assets/' + filename);
+  function submitReviewBarbie() {
+    // Get the input value
+     var userName = localStorage.getItem('userName');
+     var reviewInput = document.getElementById('review-barbie').value;
+     localStorage.setItem("movie-review-barbie", document.getElementById('movie-review-barbie').innerHTML + `<div>${userName} :  ${reviewInput} </div>`);
+ 
+     // Update the text inside the specified div
+     document.getElementById('movie-review-barbie').innerHTML += `<div>${userName}:  ${reviewInput} </div>`;
   }
+
+  function submitReviewBatman() {
+    // Get the input value
+    var userName = localStorage.getItem('userName');
+    var reviewInput = document.getElementById('review-batman').value;
+    localStorage.setItem("movie-review-batman", document.getElementById('movie-review-batman').innerHTML + `<div>${userName}: ${reviewInput} </div>`);
+
+    // Update the text inside the specified div
+    document.getElementById('movie-review-batman').innerHTML += `<div>${userName}: ${reviewInput} </div>`;
+  }
+
+  function generateRandomName() {
+    const firstNames = ["Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace", "Henry",
+    "Isabel", "Jack", "Katherine", "Leo", "Mia", "Nathan", "Olivia", "Peter",
+    "Quinn", "Rachel", "Samuel", "Tara", "Ulysses", "Violet", "William", "Xander",
+    "Yasmine", "Zachary"];
+    const lastNames = ["Johnson", "Smith", "Williams", "Davis", "Brown", "Miller", "Wilson", "Moore",
+    "Taylor", "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson",
+    "Garcia", "Martinez", "Robinson", "Clark", "Rodriguez", "Lewis", "Lee", "Walker",
+    "Hall", "Allen", "Young", "Hernandez", "King", "Wright", "Lopez", "Hill", "Scott",
+    "Green", "Adams", "Baker", "Gonzalez", "Nelson", "Carter", "Mitchell", "Perez",
+    "Roberts", "Turner", "Phillips", "Campbell", "Parker", "Evans", "Edwards", "Collins"];
+
+    const randomFirstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+    const randomLastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+
+    return `${randomFirstName} ${randomLastName}`;
+  }
+
+
   
   setInterval(() => {
-    const score = Math.floor(Math.random() * 3000);
+    const randomName = generateRandomName();
     const chatText = document.querySelector('#user-messages');
     chatText.innerHTML =
-      `<div class="event"><span class="user-event">Eich</span> scored ${score}</div>` + chatText.innerHTML;
+      `<div class="event"><span class="user-event">${randomName}</span> is online</div>` + chatText.innerHTML;
   }, 5000);
   
