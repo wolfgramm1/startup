@@ -9,12 +9,29 @@
       this.reviews = localStorage.getItem("reviews");
       this.review = localStorage.getItem("review");
 
+    //   forloop of all movies
+    setInterval(() => {
+        const chatText = document.querySelector('#movie-review-barbie');
+        chatText.innerHTML =
+          `<div class="card-text"><span class="card-text">Barbie movie review</span>` + chatText.innerHTML;
+      }, 5000);
+      setInterval(() => {
+        const chatText = document.querySelector('#movie-review-batman');
+        chatText.innerHTML =
+          `<div class="card-text"><span class="card-text">Batamn movie review</span>` + chatText.innerHTML;
+      }, 5000);
+      setInterval(() => {
+        const chatText = document.querySelector('#movie-review-holy');
+        chatText.innerHTML =
+          `<div class="card-text"><span class="card-text">Holy movie review</span>` + chatText.innerHTML;
+      }, 5000);
+
 
       const playerNameEl = document.querySelector('.user-name');
       playerNameEl.textContent = this.getPlayerName();
     }
   
-    async pressButton(button) {
+    async writeReview(button) {
       if (this.allowPlayer) {
         this.allowPlayer = false;
         await this.buttons.get(button.id).press(1.0);
