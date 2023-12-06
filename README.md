@@ -58,3 +58,12 @@ For this deliverable I properly styled the application into its final appearance
 - Application text content - Consistent fonts
 - Application images - I did image styling for all of the posters included on the website. i used class="card-group"> to style them and have them size the way I want them for consistency 
 
+### JavaScript deliverable
+
+
+For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
+
+- login - When you press enter or the login button it takes you to the movies page.
+- database - Displayed the current movie reviews that are stored locally, you can log into a differnt user and still see the reviews. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
+- WebSocket - I used the setInterval function to periodically increase a random users that will be online. I created a generate names function that makes a bunch of fake names. This will be replaced with WebSocket messages later.
+- application logic - The user can write a review for any of the movies and they will apear in the display for the movies they are also stored locally for each user, you can log into new users and still see the smae reviews.
