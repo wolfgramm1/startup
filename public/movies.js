@@ -2,9 +2,7 @@
     reviews;
     review;
     
-    
-    // have somthing that will grab the list reviews 
-  
+      
     constructor() {
       this.reviews = localStorage.getItem("reviews");
       this.review = localStorage.getItem("review");
