@@ -179,3 +179,9 @@ What will the following code using Promises output when executed?
 -pending - Currently running asynchronously
 -fulfilled - Completed successfully
 -rejected - Failed to complete
+
+
+here is the api I am going to use: http://img.omdbapi.com/?apikey=[yourkey]&
+here is my key: 5966d1ce
+
+there are many things that I have learned about using API's they can be pretty tricky but also very cool when you finally get it working. I am super happy with how my about page turned out. I love the way that it looks and acts. 
