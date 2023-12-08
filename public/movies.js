@@ -1,68 +1,37 @@
   class Movies {
 
     constructor() {
-    
-    // setInterval(async() => {
-    //     let allReviews = await loadReview()
-    //     // console.log(allReviews)
-    //     const chatText = document.querySelector('#movie-review-barbie');
-    //     // chatText.innerHTML = localStorage.getItem("movie-review-barbie");
-    //     for (let i = 0; i < allReviews.length+1; i++) {
-    //       chatText.innerText += allReviews[0][i].name +  ': ' + allReviews[0][i].review + '\n';
-    //       console.log(allReviews[0][i].name +  ': ' + allReviews[0][i].review)
-    //     }
-    //     console.log(allReviews[0])
-    //     // chatText.innerHTML = allReviews[0][0].name +  ': ' + allReviews[0][0].review;
-    //   },);
-      // setInterval(() => {
-      //   const chatText = document.querySelector('#movie-review-batman');
-      //   chatText.innerHTML = localStorage.getItem("movie-review-batman");
-      // }, 5000);
-      // setInterval(() => {
-      //   const chatText = document.querySelector('#movie-review-holy');
-      //   chatText.innerHTML = localStorage.getItem("movie-review-holy");
-      // }, 5000);
-
-
       const playerNameEl = document.querySelector('.user-name');
       playerNameEl.textContent = this.getPlayerName();
     }
 
     async loadBarbie() {
       let allReviews = await loadReview()
-        // console.log(allReviews)
-        const chatText = document.querySelector('#movie-review-barbie');
-        // chatText.innerHTML = localStorage.getItem("movie-review-barbie");
-        for (let i = 0; i < allReviews[0].length; i++) {
-          chatText.innerText += allReviews[0][i].name +  ': ' + allReviews[0][i].review + '\n';
-          console.log(allReviews[0][i].name +  ': ' + allReviews[0][i].review)
-        }
-        console.log(allReviews[0])
-        // chatText.innerHTML = allReviews[0][0].name +  ': ' + allReviews[0][0].review;
+      const chatText = document.querySelector('#movie-review-barbie');
+      
+      for (let i = 0; i < allReviews[0].length; i++) {
+        chatText.innerText += allReviews[0][i].name +  ': ' + allReviews[0][i].review + '\n';
+      }
+       
     }
     async loadBatman() {
-      let allReviews = await loadReview()
-      console.log(allReviews[1])
-      const chatText = document.querySelector('#movie-review-batman');
-      // chatText.innerHTML = localStorage.getItem("movie-review-barbie");
-      for (let i = 0; i < allReviews[1].length; i++) {
-        chatText.innerText += allReviews[1][i].name +  ': ' + allReviews[1][i].review + '\n';
-        console.log(allReviews[1][i].name +  ': ' + allReviews[1][i].review)
-      }
-      console.log(allReviews[1])
-      // chatText.innerHTML = allReviews[0][0].name +  ': ' + allReviews[0][0].review;
+    let allReviews = await loadReview()
+  
+    const chatText = document.querySelector('#movie-review-batman');
+    
+    for (let i = 0; i < allReviews[1].length; i++) {
+      chatText.innerText += allReviews[1][i].name +  ': ' + allReviews[1][i].review + '\n';
+    }
+      
     }
     async loadHoly() {
-      let allReviews = await loadReview()
-        console.log(allReviews[2])
-        const chatText = document.querySelector('#movie-review-holy');
-        // chatText.innerHTML = localStorage.getItem("movie-review-barbie");
-        for (let i = 0; i < allReviews[2].length; i++) {
-          chatText.innerText += allReviews[2][i].name +  ': ' + allReviews[2][i].review + '\n';
-          console.log(allReviews[2][i].name +  ': ' + allReviews[2][i].review)
-        }
-        console.log(allReviews[2])
-        // chatText.innerHTML = allReviews[0][0].name +  ': ' + allReviews[0][0].review;
+    let allReviews = await loadReview()
+    const chatText = document.querySelector('#movie-review-holy');
+    
+    for (let i = 0; i < allReviews[2].length; i++) {
+      chatText.innerText += allReviews[2][i].name +  ': ' + allReviews[2][i].review + '\n';
+    }
+        
     }
   
 
@@ -92,7 +61,6 @@
   }
 
   async function saveReview(reviewInput, movieid) {
-    console.log(reviewInput);
     const userName = getPlayerName();
     const newReview = {name: userName, review: reviewInput, movie: movieid};
   
@@ -105,7 +73,6 @@
 
     // Store what the service gave us as the high scores
     const review = await response.json();
-    console.log(review)
   
   }  
   
@@ -178,5 +145,5 @@
     const chatText = document.querySelector('#user-messages');
     chatText.innerHTML =
       `<div class="event"><span class="user-event">${randomName}</span> is online</div>` + chatText.innerHTML;
-  }, 10000);
+  }, 15000);
   

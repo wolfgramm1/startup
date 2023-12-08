@@ -22,7 +22,6 @@ apiRouter.get('/scores', (_req, res) => {
 
 // SubmitScore
 apiRouter.post('/score', (req, res) => {
-  console.log(req.body)
   if(req.body.movie == 'barbie'){
     moviesBarbie.push(req.body);
   }
@@ -32,7 +31,6 @@ apiRouter.post('/score', (req, res) => {
   if(req.body.movie == 'holy'){
     moviesHoly.push(req.body);
   }
-  console.log(moviesBarbie)
   
 });
 
