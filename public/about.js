@@ -12,7 +12,7 @@ function displayPicture() {
     var randomMovie = randomMovieArray[randomNumber];
     console.log(randomNumber);
     console.log(randomMovie);
-  fetch(`http://www.omdbapi.com/?apikey=5966d1ce&t=`+ randomMovie)
+  fetch(`https://www.omdbapi.com/?apikey=5966d1ce&t=`+ randomMovie)
     .then((response) => response.json())
     .then((data) => {
         console.log(data.Poster);
