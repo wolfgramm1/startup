@@ -67,3 +67,12 @@ For this deliverable I implemented by JavaScript so that the application works f
 - database - Displayed the current movie reviews that are stored locally, you can log into a differnt user and still see the reviews. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
 - WebSocket - I used the setInterval function to periodically increase a random users that will be online. I created a generate names function that makes a bunch of fake names. This will be replaced with WebSocket messages later.
 - application logic - The user can write a review for any of the movies and they will apear in the display for the movies they are also stored locally for each user, you can log into new users and still see the smae reviews.
+
+### Service deliverable
+For this deliverable I added backend endpoints that receives reviews and returns the reviews to display them.
+
+- Node.js/Express HTTP service - done!
+- Static middleware for frontend - done!
+- Calls to third party endpoints - this took a long time to get figured out. 😔
+- Backend service endpoints - Placeholders for login that stores the current user on the server. Endpoints for reviews.
+- Frontend calls service endpoints - I did this using the fetch function.
