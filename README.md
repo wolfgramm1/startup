@@ -76,3 +76,10 @@ For this deliverable I added backend endpoints that receives reviews and returns
 - Calls to third party endpoints - this took a long time to get figured out. 😔
 - Backend service endpoints - Placeholders for login that stores the current user on the server. Endpoints for reviews.
 - Frontend calls service endpoints - I did this using the fetch function.
+
+### DB deliverable
+For this deliverable I stored the reviews in the database.
+
+- MongoDB Atlas database created - done!
+- Endpoints for data - Done.
+- Stores data in MongoDB - done!
