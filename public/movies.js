@@ -57,6 +57,7 @@
     // Get the latest high scores from the service
     const response = await fetch('/api/scores');
     allReviews = await response.json();
+    console.log(allReviews)
     return allReviews    
   }
 

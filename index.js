@@ -1,38 +1,54 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
-// The service port. In production the front-end code is statically hosted by the service on the same port.
+// The service port. In production the application is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
 
-// Serve up the front-end static content hosting
+// Serve up the applications static content
 app.use(express.static('public'));
 
-// Router for service endpoints
+// // Router for service endpoints
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-//if doesnt work put in square brackets [moviesBarbie, .....]
-// GetScores
-apiRouter.get('/scores', (_req, res) => {
-  res.send([moviesBarbie, moviesBatman, moviesHoly]);
+// // GetScores
+apiRouter.get('/scores', async (_req, res) => {
+   moviesBarbie = await DB.getBarbie();
+   moviesBatman = await DB.getBatman();
+   moviesHoly = await DB.getHoly();
+   res.send([moviesBarbie, moviesBatman, moviesHoly]);
 });
 
+// // SubmitScore
+apiRouter.post('/score', async (req, res) => {
+    DB.addScore(req.body);
+    // const scores = await DB.getHighScores();
+    // res.send(scores);
+  });
+
+//if doesnt work put in square brackets [moviesBarbie, .....]
+// GetScores
+// apiRouter.get('/scores', (_req, res) => {
+//   res.send([moviesBarbie, moviesBatman, moviesHoly]);
+// });
+
 // SubmitScore
-apiRouter.post('/score', (req, res) => {
-  if(req.body.movie == 'barbie'){
-    moviesBarbie.push(req.body);
-  }
-  if(req.body.movie == 'batman'){
-    moviesBatman.push(req.body);
-  }
-  if(req.body.movie == 'holy'){
-    moviesHoly.push(req.body);
-  }
+// apiRouter.post('/score', (req, res) => {
+//   if(req.body.movie == 'barbie'){
+//     moviesBarbie.push(req.body);
+//   }
+//   if(req.body.movie == 'batman'){
+//     moviesBatman.push(req.body);
+//   }
+//   if(req.body.movie == 'holy'){
+//     moviesHoly.push(req.body);
+//   }
   
-});
+// });
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
