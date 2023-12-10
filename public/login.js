@@ -1,8 +1,8 @@
-function login() {
-    const nameEl = document.querySelector("#name");
-    localStorage.setItem("userName", nameEl.value);
-    window.location.href = "movies.html";
-  }
+// function login() {
+//     const nameEl = document.querySelector("#name");
+//     localStorage.setItem("userName", nameEl.value);
+//     window.location.href = "movies.html";
+//   }
   (async () => {
     const userName = localStorage.getItem('userName');
     if (userName) {
