@@ -83,3 +83,12 @@ For this deliverable I stored the reviews in the database.
 - MongoDB Atlas database created - done!
 - Endpoints for data - Done.
 - Stores data in MongoDB - done!
+
+### Login deliverable
+
+For this deliverable I associate the reviews with the logged in user.
+
+User registration - Creates a new account in the database.
+existing user - Stores the reviews under the same user if the user already exists.
+Use MongoDB to store credentials - Stores both user and their reviews.
+Restricts functionality - You cannot write a review until you have logged in.
