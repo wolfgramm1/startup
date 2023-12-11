@@ -1,8 +1,14 @@
+// Event messages
+const GameStartEvent = 'gameStart';
+
 class Movies {
+  socket;
 
   constructor() {
     const playerNameEl = document.querySelector('.user-name');
     playerNameEl.textContent = this.getPlayerName();
+
+    this.configureWebSocket();
   }
 
   async loadBarbie() {
@@ -37,6 +43,40 @@ class Movies {
 
   getPlayerName() {
     return localStorage.getItem('userName') ?? 'Mystery player';
+  }
+
+  // Functionality for peer communication using WebSocket
+
+  configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    this.socket.onopen = (event) => {
+      this.displayMsg('system', this.getPlayerName(), 'is online');
+    };
+    this.socket.onclose = (event) => {
+      this.displayMsg('system', this.getPlayerName(), 'is offline');
+    };
+    this.socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if (msg.type === GameStartEvent) {
+        this.displayMsg('player', msg.from, `posted a review`);
+      }
+    };
+  }
+
+  displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#user-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+  }
+
+  broadcastEvent(from, type, value) {
+    const event = {
+      from: from,
+      type: type,
+      value: value,
+    };
+    this.socket.send(JSON.stringify(event));
   }
 
 }
@@ -88,6 +128,8 @@ function submitReviewHoly() {
 
   // Update the text inside the specified div
   document.getElementById('movie-review-holy').innerHTML += `<div>${userName}: ${reviewInput} </div>`;
+
+  movie.broadcastEvent(this.getPlayerName(), GameStartEvent, {});
       
 }
 function submitReviewBarbie() {
@@ -102,7 +144,8 @@ function submitReviewBarbie() {
   // Update the text inside the specified div
   document.getElementById('movie-review-barbie').innerHTML += `<div>${userName}:  ${reviewInput} </div>`;
 
-  
+  movie.broadcastEvent(this.getPlayerName(), GameStartEvent, {});
+ 
 }
 
 function submitReviewBatman() {
@@ -115,35 +158,6 @@ function submitReviewBatman() {
 
   // Update the text inside the specified div
   document.getElementById('movie-review-batman').innerHTML += `<div>${userName}: ${reviewInput} </div>`;
+
+  movie.broadcastEvent(this.getPlayerName(), GameStartEvent, {});
 }
-
-
-
-
-
-function generateRandomName() {
-  const firstNames = ["Alice", "Bob", "Charlie", "David", "Eva", "Frank", "Grace", "Henry",
-  "Isabel", "Jack", "Katherine", "Leo", "Mia", "Nathan", "Olivia", "Peter",
-  "Quinn", "Rachel", "Samuel", "Tara", "Ulysses", "Violet", "William", "Xander",
-  "Yasmine", "Zachary"];
-  const lastNames = ["Johnson", "Smith", "Williams", "Davis", "Brown", "Miller", "Wilson", "Moore",
-  "Taylor", "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson",
-  "Garcia", "Martinez", "Robinson", "Clark", "Rodriguez", "Lewis", "Lee", "Walker",
-  "Hall", "Allen", "Young", "Hernandez", "King", "Wright", "Lopez", "Hill", "Scott",
-  "Green", "Adams", "Baker", "Gonzalez", "Nelson", "Carter", "Mitchell", "Perez",
-  "Roberts", "Turner", "Phillips", "Campbell", "Parker", "Evans", "Edwards", "Collins"];
-
-  const randomFirstName = firstNames[Math.floor(Math.random() * firstNames.length)];
-  const randomLastName = lastNames[Math.floor(Math.random() * lastNames.length)];
-
-  return `${randomFirstName} ${randomLastName}`;
-}
-
-
-
-setInterval(() => {
-  const randomName = generateRandomName();
-  const chatText = document.querySelector('#user-messages');
-  chatText.innerHTML =
-    `<div class="event"><span class="user-event">${randomName}</span> is online</div>` + chatText.innerHTML;
-}, 15000);
