@@ -92,3 +92,11 @@ User registration - Creates a new account in the database.
 existing user - Stores the reviews under the same user if the user already exists.
 Use MongoDB to store credentials - Stores both user and their reviews.
 Restricts functionality - You cannot write a review until you have logged in.
+
+### WebSocket deliverable
+For this deliverable I used webSocket to update the reviews on the frontend in realtime.
+
+Backend listens for WebSocket connection - done!
+Frontend makes WebSocket connection - done!
+Data sent over WebSocket connection - done!
+WebSocket data displayed - All user reviews display in realtime. I'm really proud that this is working. Way cool!
