@@ -79,6 +79,7 @@ apiRouter.post('/auth/create', async (req, res) => {
   secureApiRouter.use(async (req, res, next) => {
     authToken = req.cookies[authCookieName];
     const user = await DB.getUserByToken(authToken);
+    console.log(user)
     if (user) {
       next();
     } else {

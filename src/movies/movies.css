@@ -1,0 +1,43 @@
+#count {
+    color: rgb(246, 239, 158);
+  }
+  /* keep it static use a phone width as indicator, split up between differnt size screens, eg. at 400 pixels do this at 300 do this,  */
+  
+  header {
+    flex: 0 80px;
+    text-align:left;
+  }
+  h1{
+      color:rgb(255, 255, 255);
+      text-align:left;
+  }
+  
+  .users {
+      /* flex: 1; */
+      width: 100%;
+      padding: 0.5em;
+    }
+    
+    .user-name {
+      color: rgb(118, 190, 210);
+    }
+    
+    #user-messages {
+      padding-top: 0.25em;
+      opacity: 0.7;
+    }
+    
+    .event {
+      color: rgb(69, 69, 69);
+    }
+    
+    .user-event {
+      color: rgb(165, 220, 235);
+    }
+    
+    .system-event {
+      color: rgb(221, 148, 40);
+    }
+  
+  
+  
