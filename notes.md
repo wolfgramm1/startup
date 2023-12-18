@@ -254,6 +254,21 @@ Here are some common media types specified by the Content-Type header:
     -WebSocket is a communication protocol that provides full-duplex communication channels over a single, long-lived connection. It is designed to be implemented in web browsers and web servers but can be used in other contexts as well. The primary purpose of the WebSocket protocol is to enable real-time, bidirectional communication between a client (typically a web browser) and a server.
 
 12. What is JSX and how are the curly braces rendered?
+  - JavaScript XML, is a syntax extension for JavaScript often used with React.js to describe what the UI should look like.
+  - JSX supports the use of curly braces {} to embed JavaScript expressions or variables within the JSX code. This allows you to dynamically generate content based on variables or execute   - JavaScript logic within your JSX code.
+      - const name = 'John';
+        const element = <h1>Hello, {name}!</h1>;
+    -You can also use curly braces to include JavaScript logic, such as conditionals or loops, within your JSX code:
+      const isLoggedIn = true;
+
+      const element = (
+        <div>
+          <h1>Hello, {isLoggedIn ? 'User' : 'Guest'}!</h1>
+          {isLoggedIn && <p>Welcome back!</p>}
+        </div>
+      );
+
+
 13. Assuming a HTML document with a 
 <div id="root"></div>
 element, what content will the following React component generate?
