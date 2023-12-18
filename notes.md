@@ -218,7 +218,7 @@ there are many things that I have learned about using API's they can be pretty t
 <div id="root"></div>
 element, what content will the following React component generate?
       function Welcome(props) {
-        return <h1>Hello, {props.name}</h1>;
+        return \<h1>Hello, {props.name}\</h1>;
       }
       function App() {
         return (
