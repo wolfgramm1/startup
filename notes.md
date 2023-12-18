@@ -190,9 +190,31 @@ there are many things that I have learned about using API's they can be pretty t
 ### Final Review
 
 1. What ports are used for HTTP, HTTPS, SSH?
+  -HTTP (Hypertext Transfer Protocol):Default port: 80
+  - HTTPS (Hypertext Transfer Protocol Secure): Default port: 443
+  - SSH (Secure Shell): Default port: 22
+    
 2. What do HTTP status codes in the 300, 400, 500 range indicate?
-3. What does the HTTP header content-type allows you to do?
-4. What do the following attributes of a cookie do?
+   
+  - 300 Range (Redirection):300 Multiple Choices: Indicates multiple options for the resource that the client may follow.
+   301 Moved Permanently: The requested resource has been permanently moved to a new location, and future requests should use the new URL.
+  302 Found (or Moved Temporarily): Similar to 301, but the resource is temporarily located at a different URL. The client should continue to use the original URL.
+  303 See Other: The response to the request can be found at another URI using the GET method.
+  304 Not Modified: Indicates that the resource has not been modified since the version specified by the request headers, and no data is sent in the response.
+  307 Temporary Redirect: Similar to 302, but the request should be repeated with the same method and request headers.
+
+  - 400 Range (Client Errors):400 Bad Request: The server cannot or will not process the request due to a client error (e.g., malformed request syntax, invalid request message framing, or     deceptive request routing).
+  401 Unauthorized: Similar to 403 Forbidden, but specifically for cases when authentication is required and has failed or has not been provided.
+  403 Forbidden: The client does not have the necessary permissions to access the requested resource.
+  404 Not Found: The server cannot find the requested resource.
+
+  - 500 Range (Server Errors):500 Internal Server Error: A generic error message indicating that an unexpected condition was encountered on the server.
+  501 Not Implemented: The server does not support the functionality required to fulfill the request.
+  502 Bad Gateway: The server, while acting as a gateway or proxy, received an invalid response from an upstream server it accessed in attempting to fulfill the request.
+  503 Service Unavailable: The server is not ready to handle the request. Common causes are a server that is down for maintenance or is overloaded.
+
+4. What does the HTTP header content-type allows you to do?
+5. What do the following attributes of a cookie do?
 - Domain
 - Path
 - SameSite
