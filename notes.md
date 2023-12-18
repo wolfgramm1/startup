@@ -214,12 +214,27 @@ there are many things that I have learned about using API's they can be pretty t
   503 Service Unavailable: The server is not ready to handle the request. Common causes are a server that is down for maintenance or is overloaded.
 
 4. What does the HTTP header content-type allows you to do?
-5. What do the following attributes of a cookie do?
-- Domain
-- Path
-- SameSite
-- HTTPOnly
-5. Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
+The Content-Type HTTP header field indicates the media type or MIME type of the resource sent in the HTTP message body. It allows the sender to communicate to the recipient what type     of data is being sent and how it should be processed. The Content-Type header is particularly important when dealing with responses, as it helps the recipient understand how to   -       interpret the content.
+
+Here are some common media types specified by the Content-Type header:
+
+- text/html: HTML documents (web pages).
+- text/plain: Plain text.
+- application/json: JSON (JavaScript Object Notation) data.
+- application/xml: XML (eXtensible Markup Language) data.
+- image/jpeg, image/png, image/gif: Various image formats.
+- audio/mpeg, audio/wav: Audio file formats.
+- video/mp4, video/mpeg: Video file formats.
+
+6. What do the following attributes of a cookie do?
+- Domain: The Domain attribute specifies the domain for which the cookie is valid. It restricts the cookie to be sent only to the specified domain and its subdomains. For example, if a cookie has a Domain attribute of ".example.com," it will be sent to "subdomain.example.com" as well as "example.com," but not to "otherdomain.com."
+- Path:The Path attribute defines the subset of URLs on the domain for which the cookie is valid. It restricts the cookie to be sent only to URLs that match the specified path. For example, if a cookie has a Path attribute of "/subpath," it will only be sent to requests for URLs that start with "/subpath."
+- SameSite:The SameSite attribute controls when a cookie is sent with cross-site requests. It helps mitigate the risk of cross-site request forgery attacks. There are three possible values for SameSite:
+      - Strict: The cookie is only sent in a first-party context (i.e., the same site as the one the user is visiting).
+      - Lax: The cookie is sent in a first-party context and with top-level navigations initiated by GET requests from other sites.
+      - None: The cookie is sent with both first-party and cross-site requests. This value requires the Secure attribute to be set as well, meaning it is sent only over HTTPS.
+- HTTPOnly:The HttpOnly attribute is a security feature that helps prevent attacks such as cross-site scripting (XSS). When a cookie has the HttpOnly attribute, it cannot be accessed through client-side scripts (e.g., JavaScript). This makes it more difficult for an attacker to steal or manipulate the cookie using malicious scripts.
+
 
 
 6. Given the following Express service code: What does the following JavaScript fetch return?
@@ -228,15 +243,18 @@ there are many things that I have learned about using API's they can be pretty t
 
 - { cost: { $gt: 10 }, name: /fran.*/}
 - select all of the matching documents.
+   -cost is greater than 10 and name matched /fran.*/
 
 8. How should you store user passwords in a database?
+    -with a hashing algorithm 
 
 9.Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
 
 10. What is the WebSocket protocol used for?
+    -WebSocket is a communication protocol that provides full-duplex communication channels over a single, long-lived connection. It is designed to be implemented in web browsers and web servers but can be used in other contexts as well. The primary purpose of the WebSocket protocol is to enable real-time, bidirectional communication between a client (typically a web browser) and a server.
 
-11. What is JSX and how are the curly braces rendered?
-12. Assuming a HTML document with a 
+12. What is JSX and how are the curly braces rendered?
+13. Assuming a HTML document with a 
 <div id="root"></div>
 element, what content will the following React component generate?
       function Welcome(props) {
